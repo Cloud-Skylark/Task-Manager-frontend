@@ -51,13 +51,8 @@ This project demonstrates **end-to-end DevOps** from development to **Kubernetes
 ## Application UI
 
 <p align="center">
-  <img src="screenshots/app_ui.png" width="200" height="882"/>
-</p>
-
-## Code Structure
-
-<p align="center">
-  <img src="screenshots/code.png" width="200" height="882"/>
+  <img src="screenshots/app_ui.png" width="45%"/>
+  <img src="screenshots/code.png" width="45%"/>
 </p>
 
 Clean layered architecture using Controller → Service → Repository.
