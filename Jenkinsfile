@@ -6,7 +6,6 @@ pipeline {
         stage('Clone') {
             steps {
                 git url: 'https://github.com/Cloud-Skylark/Task-Manager-frontend.git', branch: 'main'
-        
             }
         }
 
@@ -18,7 +17,14 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh 'docker push devcloudy/task-frontend:latest'
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'USER',
+                    passwordVariable: 'PASS'
+                )]) {
+                    sh 'docker login -u $USER -p $PASS'
+                    sh 'docker push devcloudy/task-frontend:latest'
+                }
             }
         }
 
