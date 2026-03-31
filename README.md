@@ -50,15 +50,15 @@ This project demonstrates **end-to-end DevOps** from development to **Kubernetes
 
 ## Application UI
 
-![Application UI](screenshots/app_ui.png)
-
-Modern glass card layout with elevation shadow and smooth transitions.
-
----
+<p align="center">
+  <img src="screenshots/app_ui.png" width="700"/>
+</p>
 
 ## Code Structure
 
-![Code Structure](screenshots/code.png)
+<p align="center">
+  <img src="screenshots/code.png" width="700"/>
+</p>
 
 Clean layered architecture using Controller → Service → Repository.
 
