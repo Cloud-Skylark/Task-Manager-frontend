@@ -1,0 +1,163 @@
+:root {
+    --primary-blue: #2563eb;    /* Professional Blue */
+    --success-green: #22c55e;   /* Success Green */
+    --danger-red: #ef4444;      /* Delete Red */
+    --bg-white: #f8fafc;        /* Soft White Background */
+    --card-white: #ffffff;
+    --text-dark: #1e293b;
+}
+
+body {
+    background-color: var(--bg-white);
+    /* Subtle Blue/Green Gradient Background */
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.glass-card {
+    background: var(--card-white);
+    padding: 2.5rem;
+    border-radius: 24px;
+    width: 420px;
+    /* High Elevation Shadow */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+h1 { 
+    text-align: center; 
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem; 
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.input-container { 
+    display: flex; 
+    gap: 12px; 
+    margin-bottom: 25px; 
+}
+
+input {
+    flex: 1;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: var(--text-dark);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.add-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 0 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover { 
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.task-item {
+    background: #ffffff;
+    margin-bottom: 12px;
+    padding: 16px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #f1f5f9;
+    /* Card elevation for each task */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.task-item:hover { 
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.task-text { 
+    flex: 1; 
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.task-text.completed { 
+    text-decoration: line-through; 
+    color: #94a3b8; 
+}
+
+.actions { display: flex; gap: 8px; }
+
+/* Status Button - Green */
+.status-btn { 
+    color: var(--success-green); 
+    background: #f0fdf4;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.status-btn:hover { 
+    background: var(--success-green); 
+    color: white; 
+}
+
+/* Delete Button - Red */
+.delete-btn { 
+    color: var(--danger-red); 
+    background: #fef2f2;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete-btn:hover { 
+    background: var(--danger-red); 
+    color: white; 
+}
+
+.filter-info {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 15px;
+    text-align: right;
+    font-weight: 600;
+}
