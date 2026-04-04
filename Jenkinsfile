@@ -1,5 +1,9 @@
 pipeline {
-    agent { label 'xiya'}
+    agent { label 'xiya' }
+
+    environment {
+        IMAGE = "devcloudy/task-frontend:latest"
+    }
 
     stages {
 
@@ -11,13 +15,22 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh 'docker build -t devcloudy/task-frontend:latest .'
+                sh 'docker build -t $IMAGE .'
             }
         }
 
-        stage('Push Image') {
+        stage('Docker Login & Push') {
             steps {
-                sh 'docker push devcloudy/task-frontend:latest'
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    sh '''
+                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    docker push $IMAGE
+                    '''
+                }
             }
         }
 
