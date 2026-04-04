@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git 'https://github.com/Cloud-Skylark/Task-Manager-frontend.git'
+                git url: 'https://github.com/Cloud-Skylark/Task-Manager-frontend.git', branch: 'main'
             }
         }
 
@@ -23,6 +23,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                
+                sh 'kubectl create ns task-manager-aplication'
+
                 sh 'kubectl apply -f k8s/frontend-deployment.yaml'
             }
         }
