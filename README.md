@@ -12,7 +12,7 @@ This project demonstrates **end-to-end DevOps** from development to **Kubernetes
 
 ## 🔥 Features
 
-* **✨ Modern Glass UI:** Clean and aesthetically pleasing design.
+* **✨ Modern Glass UI:** Clean and aesthetically pleasing design with smooth transitions.
 * **⚡ Full CRUD:** Create, Update, Delete, and Toggle Status functionality.
 * **🔗 REST API Based:** Seamless communication between frontend and backend.
 * **🗄️ PostgreSQL Integration:** Reliable data persistence.
@@ -27,7 +27,7 @@ This project demonstrates **end-to-end DevOps** from development to **Kubernetes
 
 | Layer | Technology |
 | :--- | :--- |
-| **🎨 Frontend** | HTML5, CSS3 (Glassmorphism + Elevation UI), Vanilla JavaScript (Fetch API) |
+| **🎨 Frontend** | HTML5, CSS3 (Glassmorphism, 3D Elevation, Smooth Hover Animations), Vanilla JavaScript (Async Fetch API, Dynamic UI rendering) |
 | **⚙️ Backend** | Java 17, Spring Boot 3, Spring Data JPA, REST API |
 | **🗄️ Database** | PostgreSQL |
 | **🔄 DevOps** | Docker, Kubernetes, Jenkins, Ubuntu VM |
