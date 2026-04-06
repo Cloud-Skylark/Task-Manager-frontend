@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         IMAGE = "devcloudy/task-frontend:latest"
+        NAMESPACE = "task-manager"
     }
 
     stages {
@@ -37,9 +38,14 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'kubectl apply -f k8s/namespace.yml'
+
+                sh 'kubectl delete deployment frontend -n $NAMESPACE || true'
+                sh 'kubectl delete svc frontend-service -n $NAMESPACE || true'
+
                 sh 'kubectl apply -f k8s/frontend-deployment.yml'
                 sh 'kubectl apply -f k8s/frontend-service.yml'
-                sh 'kubectl rollout restart deployment frontend -n task-manager'
+
+                sh 'kubectl rollout status deployment/frontend -n $NAMESPACE'
             }
         }
     }
