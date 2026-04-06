@@ -1,4 +1,4 @@
-kind: Namespace 
 apiVersion: v1
-metadata: 
-  name: task-manager-aplication
+kind: Namespace
+metadata:
+  name: task-manager
