@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:8080/api/tasks";
+//const API_URL = "http://localhost:8080/api/tasks";
+const API_URL = "http://backend-service:8080/api/tasks";
 
 async function fetchTasks() {
     const res = await fetch(API_URL);
